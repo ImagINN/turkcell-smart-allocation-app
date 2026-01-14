@@ -11,7 +11,7 @@ import SwiftUI
 struct TurkcellSmartAllocationAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ResourcesView(totalTeams: 1, activeTeams: 1, idleTeams: 1)
         }
     }
 }
