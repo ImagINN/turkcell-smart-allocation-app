@@ -23,10 +23,8 @@ final class RequestController: RequestControllerProtocol {
         self.decoder = decoder
     }
 
-    convenience init(configuration: URLSessionConfiguration = .af.default,
-                     decoder: JSONDecoder = RequestController.makeDecoder()) {
-        let session = Session(configuration: configuration)
-        self.init(session: session, decoder: decoder)
+    convenience init() {
+        self.init(session: .default, decoder: RequestController.makeDecoder())
     }
 
     func get<T: Decodable>(_ url: URL) async throws -> T {
