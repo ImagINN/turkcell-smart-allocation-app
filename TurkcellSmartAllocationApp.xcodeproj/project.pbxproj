@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		76EB88332F18405400EE1AAA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 76EB88322F18405400EE1AAA /* Alamofire */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		76A9E2002F181A3A000D1A50 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -45,6 +49,11 @@
 			path = TurkcellSmartAllocationAppUITests;
 			sourceTree = "<group>";
 		};
+		76A9E21C2F182452000D1A50 /* TurkcellSmartAllocationNetwork */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TurkcellSmartAllocationNetwork;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76EB88332F18405400EE1AAA /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +85,7 @@
 		76A9E1E92F181A39000D1A50 = {
 			isa = PBXGroup;
 			children = (
+				76A9E21C2F182452000D1A50 /* TurkcellSmartAllocationNetwork */,
 				76A9E1F42F181A39000D1A50 /* TurkcellSmartAllocationApp */,
 				76A9E2022F181A3A000D1A50 /* TurkcellSmartAllocationAppTests */,
 				76A9E20C2F181A3A000D1A50 /* TurkcellSmartAllocationAppUITests */,
@@ -109,9 +120,11 @@
 			);
 			fileSystemSynchronizedGroups = (
 				76A9E1F42F181A39000D1A50 /* TurkcellSmartAllocationApp */,
+				76A9E21C2F182452000D1A50 /* TurkcellSmartAllocationNetwork */,
 			);
 			name = TurkcellSmartAllocationApp;
 			packageProductDependencies = (
+				76EB88322F18405400EE1AAA /* Alamofire */,
 			);
 			productName = TurkcellSmartAllocationApp;
 			productReference = 76A9E1F22F181A39000D1A50 /* TurkcellSmartAllocationApp.app */;
@@ -195,6 +208,9 @@
 			);
 			mainGroup = 76A9E1E92F181A39000D1A50;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				76EB88312F18405400EE1AAA /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 76A9E1F32F181A39000D1A50 /* Products */;
 			projectDirPath = "";
@@ -405,6 +421,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,6 +454,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -578,6 +596,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		76EB88312F18405400EE1AAA /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		76EB88322F18405400EE1AAA /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76EB88312F18405400EE1AAA /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 76A9E1EA2F181A39000D1A50 /* Project object */;
 }
