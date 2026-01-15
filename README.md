@@ -1,7 +1,7 @@
 # 🚀 Turkcell Smart Allocation App
 
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Turkcell_logo.svg/2560px-Turkcell_logo.svg.png" alt="Turkcell Logo" width="200"/>
+  <img src="https://ffo3gv1cf3ir.merlincdn.net/SiteAssets/Hakkimizda/genel-bakis/logolarimiz/TURKCELL_YATAY_ERKEK_LOGO.png?20260115_03" alt="Turkcell Logo" width="400"/>
 </p>
 
 <p align="center">
@@ -22,6 +22,15 @@
 - [Veri Modelleri](#-veri-modelleri-dtos)
 - [Kurulum](#-kurulum)
 - [Kullanım](#-kullanım)
+
+---
+
+<div align="center">
+  <img width="225" style="height: auto;" alt="Dashboard" src="https://github.com/user-attachments/assets/05d4ff0b-6b40-43d7-96df-c0a0cdb6436c" />
+  <img width="225" style="height: auto;" alt="Requests" src="https://github.com/user-attachments/assets/3e24b0fd-cafc-4d90-be03-1956ec066c77" />
+  <img width="225" style="height: auto;" alt="Resources" src="https://github.com/user-attachments/assets/c38e3728-2286-4229-9a77-89dbb76bf175" />
+  <img width="225" style="height: auto;" alt="Allocations" src="https://github.com/user-attachments/assets/42c32d3e-dc20-4a37-a53d-7d81924074ae" />
+</div>
 
 ---
 
@@ -551,7 +560,7 @@ xcodebuild test -scheme TurkcellSmartAllocationAppUITests -destination 'platform
 
 ## 📝 Lisans
 
-Bu proje Turkcell iç kullanımı için geliştirilmiştir.
+Bu proje Turkcell Code Night Ankara etkinliği için geliştirilmiştir.
 
 ---
 
@@ -563,5 +572,5 @@ Bu proje Turkcell iç kullanımı için geliştirilmiştir.
 ---
 
 <p align="center">
-  <sub>Made with ❤️ for Turkcell Code Night</sub>
+  <sub>Made with ❤️ for Turkcell</sub>
 </p>
