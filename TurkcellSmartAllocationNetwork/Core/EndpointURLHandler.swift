@@ -1,5 +1,5 @@
 //
-//  EndpointHandler.swift
+//  EndpointURLHandler.swift
 //  TurkcellSmartAllocationApp
 //
 //  Created by Gokhan on 14.01.2026.
@@ -9,26 +9,46 @@ import Foundation
 
 public enum EndpointURLHandler {
     
-    static let wordBaseUrl = URL(string: "http://localhost:3001/api/requests")
-    static let synonymsWordBaseUrl = URL(string: "https://api.datamuse.com/words?rel_syn=")
+    // MARK: - Base URLs
     
-    case word(_ word: String)
-    case synonymsWord(_ word: String)
+    static let requestsBaseUrl = URL(string: "http://localhost:3001/api")
+    
+    // MARK: - Endpoints
+    
+    case requests
+    case requestDetail(id: String)
+    case userRequests(userId: String)
+    
+    // MARK: - URL Builder
     
     var url: URL {
         switch self {
-        case let .word(word):
-            guard let baseUrl = Self.wordBaseUrl else {
-                fatalError("Invalid word base URL")
+        case .requests:
+            guard let baseUrl = Self.requestsBaseUrl else {
+                fatalError("Invalid requests base URL")
             }
-            return baseUrl.appendingPathComponent(word)
+            return baseUrl.appendingPathComponent("requests")
             
-        case let .synonymsWord(word):
-            guard let baseUrl = Self.synonymsWordBaseUrl,
-                  let url = URL(string: "\(baseUrl)\(word)") else {
-                fatalError("Invalid synonyms base URL")
+        case let .requestDetail(id):
+            guard let baseUrl = Self.requestsBaseUrl else {
+                fatalError("Invalid requests base URL")
             }
-            return url
+            return baseUrl
+                .appendingPathComponent("requests")
+                .appendingPathComponent(id)
+            
+        case let .userRequests(userId):
+            guard let baseUrl = Self.requestsBaseUrl else {
+                fatalError("Invalid requests base URL")
+            }
+            var components = URLComponents(
+                url: baseUrl.appendingPathComponent("requests"),
+                resolvingAgainstBaseURL: false
+            )
+            components?.queryItems = [
+                URLQueryItem(name: "userId", value: userId)
+            ]
+            return components?.url ?? baseUrl.appendingPathComponent("requests")
         }
     }
 }
