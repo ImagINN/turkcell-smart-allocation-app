@@ -31,6 +31,10 @@ public enum EndpointURLHandler {
     case allocationsFiltered(status: String?)
     case allocationDetail(id: String)
     
+    // MARK: - Dashboard Endpoints
+    
+    case dashboardSummary
+    
     // MARK: - URL Builder
     
     var url: URL {
@@ -115,6 +119,13 @@ public enum EndpointURLHandler {
             return baseUrl
                 .appendingPathComponent("allocations")
                 .appendingPathComponent(id)
+            
+        // MARK: Dashboard URLs
+            
+        case .dashboardSummary:
+            return baseUrl
+                .appendingPathComponent("dashboard")
+                .appendingPathComponent("summary")
         }
     }
 }

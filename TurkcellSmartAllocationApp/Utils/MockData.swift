@@ -27,7 +27,7 @@ enum RequestStatus: String, Codable {
     case completed = "COMPLETED"
 }
 
-enum ResourceStatus: String, Codable {
+enum ResourceStatusMock: String, Codable {
     case available = "AVAILABLE"
     case busy = "BUSY"
     
@@ -58,7 +58,7 @@ struct ResourceMock: Identifiable {
     let type: String
     let capacity: Int
     let city: String
-    let status: ResourceStatus
+    let status: ResourceStatusMock
 }
 
 struct AllocationMock: Identifiable {

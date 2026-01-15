@@ -20,7 +20,7 @@ struct MainTabView: View {
                 .tabItem { Label("Talepler", systemImage: "list.bullet.rectangle.fill") }
                 .tag(1)
             
-            ResourcesView(totalTeams: 12, activeTeams: 8, idleTeams: 4)
+            ResourcesView()
                 .tabItem { Label("Kaynaklar", systemImage: "person.3.fill") }
                 .tag(2)
             
