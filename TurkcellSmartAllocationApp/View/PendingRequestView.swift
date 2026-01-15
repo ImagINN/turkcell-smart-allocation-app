@@ -11,10 +11,43 @@ struct PendingRequestView: View {
     // Mock Data Seti - Normalde bu ViewModel'den gelecek
     // Skorlara göre büyükten küçüğe sıralıyoruz
     let requests: [RequestMock] = [
-        RequestMock(id: "REQ-2041", userId: "U8", service: "Superonline", location: "Ankara", urgency: .high, priorityScore: 92, waitingTime: "14:25"),
-        RequestMock(id: "REQ-1050", userId: "U12", service: "Mobil", location: "İstanbul", urgency: .medium, priorityScore: 65, waitingTime: "08:12"),
-        RequestMock(id: "REQ-0012", userId: "U3", service: "TV+", location: "İzmir", urgency: .low, priorityScore: 30, waitingTime: "02:45")
-    ].sorted(by: { $0.priorityScore > $1.priorityScore }) // [cite: 57, 83]
+        RequestMock(
+            id: "REQ-2041",
+            userId: "U8",
+            userName: "Ahmet Yılmaz",
+            service: "Superonline",
+            location: "Ankara",
+            urgency: .high,
+            priorityScore: 92,
+            waitingTime: "14:25",
+            addTime: Date().addingTimeInterval(-900), // 15 dk önce
+            status: .pending
+        ),
+        RequestMock(
+            id: "REQ-1050",
+            userId: "U12",
+            userName: "Ayşe Demir",
+            service: "Mobil",
+            location: "İstanbul",
+            urgency: .medium,
+            priorityScore: 65,
+            waitingTime: "08:12",
+            addTime: Date().addingTimeInterval(-1800), // 30 dk önce
+            status: .pending
+        ),
+        RequestMock(
+            id: "REQ-0012",
+            userId: "U3",
+            userName: "Caner Öz",
+            service: "TV+",
+            location: "İzmir",
+            urgency: .low,
+            priorityScore: 30,
+            waitingTime: "02:45",
+            addTime: Date().addingTimeInterval(-3600), // 1 saat önce
+            status: .pending
+        )
+    ].sorted(by: { $0.priorityScore > $1.priorityScore }) // En yüksek puanlıyı başa çekiyoruz [cite: 57, 83]
 
     var body: some View {
             ScrollView {

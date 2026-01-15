@@ -77,36 +77,3 @@ struct ResourcesView: View {
         }
     }
 }
-
-struct SummaryMetricCard: View {
-    let title: String
-    let value: Int
-    let valueColor: Color
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text(title.uppercased())
-                .font(.caption2)
-                .fontWeight(.bold)
-                .foregroundColor(Color(.systemGray2))
-            
-            Text("\(value)")
-                .font(.title2)
-                .fontWeight(.bold)
-                .foregroundColor(valueColor)
-        }
-        .padding(.vertical, 16)
-        .padding(.horizontal, 12)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.white)
-        .cornerRadius(12)
-        .overlay(
-            RoundedRectangle(cornerRadius: 12)
-                .stroke(Color(.systemGray5), lineWidth: 1)
-        )
-    }
-}
-
-#Preview {
-    ResourcesView(totalTeams: 12, activeTeams: 8, idleTeams: 4)
-}

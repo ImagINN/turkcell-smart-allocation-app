@@ -9,7 +9,7 @@ import SwiftUI
 
 enum Urgency: String, Codable {
     case low = "LOW"
-    case medium = "MEDIUM"
+    case medium = "ORTA"
     case high = "HIGH"
     
     var color: Color {
@@ -21,14 +21,10 @@ enum Urgency: String, Codable {
     }
 }
 
-struct RequestMock: Identifiable {
-    let id: String // REQ-2041 [cite: 17]
-    let userId: String // U8 [cite: 18]
-    let service: String // Superonline [cite: 19]
-    let location: String // Ankara [cite: 35, 50]
-    let urgency: Urgency //[cite: 21]
-    let priorityScore: Int // 92 [cite: 75]
-    let waitingTime: String // "12:45"
+enum RequestStatus: String, Codable {
+    case pending = "PENDING"
+    case assigned = "ASSIGNED"
+    case completed = "COMPLETED"
 }
 
 enum ResourceStatus: String, Codable {
@@ -44,10 +40,30 @@ enum ResourceStatus: String, Codable {
     }
 }
 
+struct RequestMock: Identifiable {
+    let id: String
+    let userId: String
+    let userName: String
+    let service: String
+    let location: String
+    let urgency: Urgency
+    let priorityScore: Int
+    let waitingTime: String
+    let addTime: Date
+    let status: RequestStatus
+}
+
 struct ResourceMock: Identifiable {
-    let id: String // RES-1
-    let type: String // TECH_TEAM, SUPPORT
-    let capacity: Int // 5
-    let city: String // Ankara
+    let id: String
+    let type: String
+    let capacity: Int
+    let city: String
     let status: ResourceStatus
+}
+
+struct AllocationMock: Identifiable {
+    let id: String
+    let request: RequestMock
+    let resource: ResourceMock
+    let timestamp: String
 }
